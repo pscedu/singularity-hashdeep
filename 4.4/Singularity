@@ -1,12 +1,12 @@
 Bootstrap: docker
-From: debian:latest
+From: debian:buster
 
 %labels
     AUTHOR icaoberg
     EMAIL icaoberg@psc.edu
     SUPPORT help@psc.edu
     REPOSITORY http://gitub.com/pscedu/singularity-hashdeep
-    COPYRIGHT Copyright © 2021 Pittsburgh Supercomputing Center. All Rights Reserved.  
+    COPYRIGHT Copyright © 2021-2024 Pittsburgh Supercomputing Center. All Rights Reserved.  
     VERSION 4.4
 
 %post
@@ -20,3 +20,6 @@ From: debian:latest
     ./configure
     make
     make install
+
+%runscript
+    hashdeep "$@"
